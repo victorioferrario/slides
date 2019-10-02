@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "src/animate.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +127,42 @@
           }
         }
       }
-    }},
+    },
+    "lms": {
+      "projectType": "library",
+      "root": "projects/lms",
+      "sourceRoot": "projects/lms/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/lms/tsconfig.lib.json",
+            "project": "projects/lms/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lms/src/test.ts",
+            "tsConfig": "projects/lms/tsconfig.spec.json",
+            "karmaConfig": "projects/lms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lms/tsconfig.lib.json",
+              "projects/lms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "lms-workspace"
 }

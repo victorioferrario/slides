@@ -17,7 +17,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@lms": [
+        "dist/lms",
+        "projects/lms/src"
+      ],
+      "@lms/*": [
+        "dist/lms/*",
+        "projects/lms/src/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
